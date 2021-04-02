@@ -1,0 +1,39 @@
+package assign;
+
+import java.util.Scanner;
+
+interface OddEven{
+	void OE(int a);
+}
+
+public class OddEvenLambda {
+
+	public static void main(String[] args) {
+		System.out.println("Enter the value");
+		int ss = new Scanner(System.in).nextInt();
+		OddEven r = (a)->{
+			if(a%2==0) {
+				System.out.println("Even no: "+a);
+			}
+			else {
+				System.out.println("Odd no: "+a);
+			}
+		};
+		r.OE(ss);
+		
+		//or//
+		/*
+		OddEven r = (a)->{
+			if(a%2==0) {
+				System.out.println("Even no: "+a);
+			}
+			else {
+				System.out.println("Odd no: "+a);
+			}
+		};
+		r.OE(3);
+		r.OE(22);
+		*/
+	}
+
+}

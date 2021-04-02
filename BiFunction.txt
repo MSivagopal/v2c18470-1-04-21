@@ -1,0 +1,44 @@
+package assign;
+
+import java.util.function.BiFunction;
+
+interface addition{
+	static int add(int a,int b) {
+		return a+b;
+	}
+}
+
+interface Str{
+	static String add1(String c, String d )
+	{
+		return c+d;
+	}
+}
+
+interface sif{
+	static float ad(int x,  float y )
+	{
+		return x+y;
+	}
+}
+
+
+public class BiFunctions {
+
+	public static void main(String[] args) {
+		
+		BiFunction<Integer, Integer, Integer> r = addition :: add;
+		System.out.println(r.apply(10, 20));
+		
+		BiFunction<String, String, String> r1 = Str :: add1;
+		System.out.println(r1.apply("10", "20"));
+		
+		BiFunction<Integer, Float, Float> r2 = sif :: ad;
+		System.out.println(r2.apply(10, 20.22f));
+		
+		BiFunction<String ,String, String>str2 = (i,j)->i+j;
+		String k = str2.apply("Good", "Morning");
+		System.out.println(k);
+	}
+
+}

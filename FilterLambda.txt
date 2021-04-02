@@ -1,0 +1,41 @@
+package assign;
+
+import java.util.ArrayList;
+import java.util.stream.Stream;
+
+class Students {
+	Integer Stu_ID;
+	Float Total_Marks;
+	String Stu_Name;
+
+	public Students(int stu_ID, String stu_Name, float total_Marks) {
+		super();
+		Stu_ID = stu_ID;
+		Total_Marks = total_Marks;
+		Stu_Name = stu_Name;
+	}
+
+}
+
+public class FilterLambda {
+
+	public static void main(String[] args) {
+		ArrayList<Students> list = new ArrayList<Students>();
+		list.add(new Students(15151, "Shyaam", 95.5f));
+		list.add(new Students(15159, "Supreeth", 93.80f));
+		list.add(new Students(15154, "Tharun", 97.22f));
+		
+		System.out.println("Sorted by Filter");
+		Stream<Students> filter = list.stream().filter(a -> a.Total_Marks > 95);
+		
+		filter.forEach(
+				Students -> System.out.println(Students.Stu_ID + " " + Students.Stu_Name + " " + Students.Total_Marks)
+				);
+		
+		System.out.println("Sorted by Lambda Expresion for Marks");
+		for (Students s : list) {
+			System.out.println(s.Stu_ID + " " + s.Stu_Name + " " + s.Total_Marks);
+		}
+	}
+
+}
